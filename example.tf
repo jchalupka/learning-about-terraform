@@ -5,4 +5,7 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = "${lookup(var.amis, var.region)}"
   instance_type = "t2.micro"
+
+  count = 2
 }
+
